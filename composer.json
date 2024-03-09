@@ -1,0 +1,11 @@
+{
+    "name": "monta/gestion_stock",
+    "type": "project",
+    "autoload": {"psr-4": {"gs\\":"src/"}},
+    "require": {
+        "altorouter/altorouter": "1.2.0",
+        "symfony/var-dumper": "^6.2",
+        "filp/whoops": "2.14.6",
+        "vlucas/valitron": "1.4.11"
+    }
+}
