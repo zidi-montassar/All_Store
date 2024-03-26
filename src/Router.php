@@ -50,6 +50,7 @@ class Router {
     public function run(): self
     {   
         $match = $this->root->match();
+        //dd($match);
         $params = $match['params'];
         $target = $match['target'] ?: "e404";
         $root = $this;
