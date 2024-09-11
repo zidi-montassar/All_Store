@@ -13,7 +13,7 @@ $categories = $table_category->getCategories();
 
 
 
-define('PER_PAGE', 20);
+define('PER_PAGE', 3);
 
 $query= (new QueryBuilder($pdo))->from('product');
 
@@ -30,19 +30,19 @@ if (!empty($_GET['q'])){
 $Table = new TableBuilder($query, $_GET, [
     'ref' => 'Reference',
     'name' => 'Name',
-   'brand' => 'Trademark',
-   'category' => 'Category',
-   'retail_price' => 'Sale price',
-   'wholesale_price' => 'W.Price',
-   'quantity' => 'Quantity'
+    'brand' => 'Trademark',
+    'category' => 'Category',
+    'retail_price' => 'Sale price',
+    'wholesale_price' => 'W.Price',
+    'quantity' => 'Quantity'
 ], $categories, 'retail_price', 'ref');
 
 ?>
 
-<div class="container my-4">
-<h1 style="color:blue">Products</h1>
+<div class="container mt-5">
+<h1 style="color:white">Products</h1>
 
-<div class="p-4">
+<div class="mt-5">
     <?php $Table->execute($root) ?>
 </div>
 </div>

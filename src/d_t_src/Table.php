@@ -102,15 +102,15 @@ HTML;
 
 
         <div class="container">
-                <table class="table table-dark table-striped">
+                <table class="table table-striped" style="width: 100%; height: 100%;">
                     <thead>
                         
                         <tr>   
                             <?php foreach ($this->columns as $key => $column) : ?>
                                         <?php if(in_array($key, $this->sortedItem)) :?> 
-                                            <th style="color:grey"><?= $this->sort($key, $column)?></th> 
+                                            <th style="color:#381061; font-size: 20px;"><?= $this->sort($key, $column)?></th> 
                                         <?php else : ?> 
-                                            <th style="color:grey"><strong><?= $column?></strong></th>
+                                            <th style="color:dark; font-size: 20px;"><strong><?= $column?></strong></th>
                                         <?php endif;?>
                             <?php endforeach; ?>
                         </tr>    
@@ -120,7 +120,7 @@ HTML;
                         
                         <?php foreach ($items as $item){?>             
                                 <tr>
-                                        <?php $style = '';
+                                        <?php $style = 'color:white';
                                             if($item->getQuantity() <= $item->getA_quantity()){
                                                 $style = 'color:red';
                                             } 

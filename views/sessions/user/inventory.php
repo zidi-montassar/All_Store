@@ -15,10 +15,11 @@ $pdo = Connection::pdo();
 $table_category = new Tablecategory($pdo);
 $categories = $table_category->getCategories();
 $categories[0] = 'All';
-
+//dd($_POST['category']);
 $opt = [];
 foreach($categories as $k => $category){
-    $opt[] = "<option value=\"$k\">$category</option>";
+    $selected = $_POST['category'] == $k ? " selected" : "";
+    $opt[] = "<option value=\"$k\"$selected>$category</option>";
 }
 $options = implode('', $opt);
 
@@ -63,12 +64,12 @@ if(!empty($_POST)){
 
 ?>
 
-<div class="my-4">
-    <h1>Inventory</h1>
-    <div class="form-group my-4">
+<div class="mt-5">
+    <h1 style="color: white;">Inventory</h1>
+    <div class="form-group mt-5">
         <form action="" method="POST">
                 <div class="form-group ">
-                            <label for="cat">Select Category or All</label>
+                            <label for="cat" style="color: white;">Select Category</label>
                             <select id="cat" class="ms-4" name="category" required><?= $options ?></select>
                             <button class="btn btn-primary ms-2" type="submit" style="display:inline">Select</button>
                 </div>
@@ -79,12 +80,12 @@ if(!empty($_POST)){
 
 <?php if(!empty($_POST)): ?>
 
-<div class="my-4">
+<div class="mt-5">
     <table class="table table-striped">
         <thead>
             <tr>
                 <?php foreach($columns as $column): ?>
-                    <th><?= $column ?></th>
+                    <th style="font-size: 22px;"><?= $column ?></th>
                 <?php endforeach ?> 
             </tr>   
         </thead>
@@ -94,7 +95,7 @@ if(!empty($_POST)){
                     <?php foreach($columns as $column):
                         $command = 'get' . $column; ?>
                          
-                        <td><?= $product->$command() ?></td>
+                        <td style="font-size: 18px;"><?= $product->$command() ?></td>
                         
                     <?php endforeach ?>
                 </tr>

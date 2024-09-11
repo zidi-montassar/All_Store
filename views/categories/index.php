@@ -17,19 +17,19 @@ $categories = $table_category->getAll();
 
 ?>
 
-<div class="container my-4">
-    <h1 style="color:blue">Categories</h1>
+<div class="container mt-5">
+    <h1 style="color:white;">Categories</h1>
 
     <?php if(isset($_GET['delete'])): ?>
-        <div class="alert alert-success">Category deleted successfully!</div>
+        <div class="alert alert-success mt-4">Category deleted successfully!</div>
     <?php endif ?>
 
-    <div class="row my-4">
+    <div class="row mt-5">
         <?php foreach($categories as $category) : ?>
             <div class="col-md-3">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $category->getName() ?></h5>
+                <div class="card mb-3" style="background: transparent; border-width: 2em;">
+                    <div class="card-body" style="">
+                        <h5 class="card-title" style="font-size: 22px;"><strong><?= $category->getName() ?></strong></h5>
                         <div class="my-4s">
                             <p>
                                 <a href= "<?= $root->url('Show_Category', ['id' => $category->getId(), 'slug' => $category->getSlug()])?>" class="btn btn-primary">Open</a>

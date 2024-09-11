@@ -43,7 +43,7 @@ $users = $table_user->getAll();
                     <li>
                         <?= $user->getUsername() ?>
                         <form action="<?=$root->url('Delete_User', ['id' => $user->getId()])?>" method="POST"
-                            onsubmit="return confirm('Do you really want to delete this user ?')" style="display:inline" style="justify-content:space-between">
+                            onsubmit="return confirm('Do you really want to delete this user?')" style="display:inline" style="justify-content:space-between">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </li>

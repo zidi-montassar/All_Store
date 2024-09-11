@@ -119,10 +119,10 @@ $options = implode('', $opts);
 $today = (new DateTime())->format('Y-m-d');
 ?>
 
-<h1 class="mt-2">History :</h1>
+<h1 class="mt-5" style="color: white;">History :</h1>
 
 <div class="container">
-    <div class="form-group mt-4">
+    <div class="form-group mt-5">
         <form action="" method="POST">
             <div class="form-control" style="display:inline">
                     <label for="datemin">select date of start:</label>
@@ -144,12 +144,12 @@ $today = (new DateTime())->format('Y-m-d');
     </div>
 </div>
 
-<div class="container my-4">
+<div class="container mt-5">
     <table class="table table-striped">
         <thead>
             <tr>
                 <?php foreach($columns as $column): ?>
-                    <th><?= $column ?></th>
+                    <th style="font-size: 22px;"><?= $column ?></th>
                 <?php endforeach ?>
             </tr>
         </thead>
@@ -168,20 +168,20 @@ $today = (new DateTime())->format('Y-m-d');
                             $function = 'get' . ucfirst($property);
                                 if($property === 'property'):
                                     if($history->$function() !== null):?>
-                                        <td style="<?= $style ?>"><?= $history->$function() ?></td>
+                                        <td style="font-size: 18px; <?= $style ?>"><?= $history->$function() ?></td>
                                     <?php else: ?>
                                         <td></td>
                                     <?php endif;
                                 elseif($property === 'username'):?>
-                                        <td style="<?= $style ?>"><?= $history->$function() ?></td>
+                                        <td style="font-size: 18px; <?= $style ?>"><?= $history->$function() ?></td>
                                 <?php else:?>
-                                <td style="<?= $style ?>"><?= $history->$function() ?></td>
+                                <td style="font-size: 18px; <?= $style ?>"><?= $history->$function() ?></td>
                                 <?php endif ?>
                         <?php endforeach;
                             foreach($dates as $date):
                                 $dfct = 'get' . ucfirst($date);
                                     if($history->$dfct() !== null):?>
-                                        <td style="<?= $style ?>"><?= $history->$dfct() ?></td>
+                                        <td style="font-size: 18px; <?= $style ?>"><?= $history->$dfct() ?></td>
                                     <?php endif;
                             endforeach?>
                         </tr>

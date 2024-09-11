@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
     <title><?= $pagetitle ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/">
@@ -79,6 +79,18 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .background-image {
+        background-image: url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        /*background-position: center;*/
+        background-repeat: no-repeat;
+        /*height: 100vh;
+        width: 100vw;
+        object-fit: cover;*/
+        filter: contrast() brightness() opacity(); /* Adjust contrast here */
+      }
+
     </style>
 
     
@@ -86,7 +98,7 @@
     <link href="sticky-footer-navbar.css" rel="stylesheet">
   </head>
   
-  <body class="d-flex flex-column h-100 p-3 mb-2 bg-light text-dark">
+  <body class="background-image d-flex align-items-center justify-content-center flex-column text-dark">
     
 <header>
   <!-- Fixed navbar -->
@@ -166,20 +178,27 @@
 </header>
 
 <!-- Begin page content -->
-<div class="container mt-5">
-    <?= $require ?>
-</div>
+
+  <!--<img class="background-image" src="../../istockphoto.jpg" alt="bg image">
+  <div class="background-image d-flex align-items-center justify-content-center">-->
+    <div class="container mt-5">
+        <?= $require ?>
+    </div>
+  <!--</div>-->
+  
+  
 
 
+<!--
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
     <span class="text-muted"></span>
   </div>
 </footer>
+          -->
 
-
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-      
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+         
   </body>
+  
 </html>

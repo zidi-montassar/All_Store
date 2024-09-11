@@ -14,18 +14,18 @@ $tasks = ['History', 'Users']
 
 ?>
 
-<div class="container my-4">
-    <h1>Admin space</h1>
+<div class="container mt-5">
+    <h1 style="color: white;">Admin space</h1>
 
 
-    <div class="row my-4">
+    <div class="row mt-5">
         
             <div class="col-md-3">
-                <div class="card mb-3">
+                <div class="card mb-3" style="background: transparent; border-width: 2em;">
                     <div class="card-body">
-                        <h4 class="card-title">History</h4>
+                        <h4 class="card-title" style="color: white;">History</h4>
                         <div class="my-4s">
-                            <p>
+                            <p class="mt-3">
                                 <a href= "<?= $root->url('History')?>" class="btn btn-primary">Consult</a>
                             </p>
                         </div>
@@ -33,11 +33,11 @@ $tasks = ['History', 'Users']
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card mb-3">
+                <div class="card mb-3" style="background: transparent; border-width: 2em;">
                     <div class="card-body">
-                        <h4 class="card-title">Users</h4>
+                        <h4 class="card-title" style="color: white;">Users</h4>
                         <div class="my-4s">
-                            <p>
+                            <p class="mt-3">
                                 <a href= "<?= $root->url('Users')?>" class="btn btn-primary">Consult</a>
                             </p>
                         </div>
